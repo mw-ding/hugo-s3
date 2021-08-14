@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:focal
 # Hugo install sequence based on Dockerfile from https://bitbucket.org/fmanco/docker-images
 
 # Upgrade
@@ -8,7 +8,7 @@ RUN apt-get update && apt-get -y upgrade -u && apt-get clean
 RUN apt-get install -y --no-install-recommends openssh-client git
 
 # Install hugo
-ENV hugo_deb_url=https://github.com/gohugoio/hugo/releases/download/v0.26/hugo_0.26_Linux-64bit.deb
+ENV hugo_deb_url=https://github.com/gohugoio/hugo/releases/download/v0.87.0/hugo_0.87.0_Linux-64bit.deb
 ADD ${hugo_deb_url} /tmp/hugo.deb
 RUN dpkg -i /tmp/hugo.deb && rm -f /tmp/hugo.deb
 
